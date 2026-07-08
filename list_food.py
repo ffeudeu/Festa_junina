@@ -6,8 +6,10 @@ import os
 ARQUIVO_DADOS = 'dados_festa.json'
 
 # Listas iniciais de pratos
-DOCES = ["Canjica", "Pé de Moleque", "Bolo de Milho", "Bolo de Fubá", "Paçoca", "Arroz Doce", "Maçã do Amor", "Cocada", "Curau", "Doce de Abóbora"]
-SALGADOS = ["Cachorro Quente", "Pipoca", "Caldo Verde", "Milho Cozido", "Pamonha", "Pastel", "Cuscuz", "Torta Salgada", "Espetinho", "Pão de Queijo"]
+DOCES = ["Canjica", "Cuscuz", "Bolo de Milho", "Bolo de Fubá c/ goiabada", "Pudim", "Bolo de coco - gelado", "Maçã do Amor", "Cocada - caseiro", "Mini churros - min 50uni", "Doce de Abóbora - caseiro", "Cajuzinho - min 50uni"
+"Amendoim doce - min 25uni", "Bolo de aipim", "Doce de mamão - caseiro"]
+SALGADOS = ["Cachorro Quente", "Caldo de abóbora", "Caldo Verde", "Milho Cozido", "Salgadinho - cento", "Pastel - min 25uni", "Salsichão", "Torta Salgada", "Empadinha - min 50uni", "Caldo de Macoto", "Quiche", "Empadão - Frango",
+"Empadão - Camarão", "Bolinho de aipim - min 25uni"]
 
 # Função para carregar os dados salvos ou criar um novo se não existir
 def carregar_dados():
@@ -34,7 +36,7 @@ acompanhantes = st.number_input("Quantas pessoas você vai levar com você?", mi
 st.divider()
 
 st.subheader("🥘 Escolha dos Pratos")
-st.info("Regra: de **uma duas pessoas**, leva um prato. **Mais de dois** é obrigatório escolher pelo uma opção de Doce e uma de Salgado.")
+st.info("Regra: De **uma a duas pessoas**, leva um prato. **Mais de dois** é obrigatório escolher pelo uma opção de Doce e uma de Salgado.")
 
 # Opções de múltipla escolha (Selectbox) para os pratos que ainda estão disponíveis
 doce_escolhido = st.selectbox("Escolha um prato DOCE", ["Nenhum"] + dados["doces_disponiveis"])
@@ -48,7 +50,7 @@ if st.button("Confirmar Presença"):
         trouxe_salgado = salgado_escolhido != "Nenhum"
         
         # Validação da regra de convidados
-        if acompanhantes >= 2 and not (trouxe_doce and trouxe_salgado):
+        if acompanhantes >= 1 and not (trouxe_doce and trouxe_salgado):
             st.error("Como você vai levar 2 ou mais pessoas, por favor selecione um prato Doce E um prato Salgado.")
         elif not trouxe_doce and not trouxe_salgado:
             st.error("Por favor, selecione pelo menos um prato (doce ou salgado) para trazer!")
@@ -74,7 +76,7 @@ if st.button("Confirmar Presença"):
 st.divider()
 
 # Exibição de quem já confirmou
-st.subheader("📋 Lista de Confirmados")
+st.subheader("Lista de Confirmados")
 if dados["convidados"]:
     for c in dados["convidados"]:
         total_pessoas = c['acompanhantes'] + 1
