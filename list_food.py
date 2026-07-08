@@ -7,9 +7,9 @@ ARQUIVO_DADOS = 'dados_festa.json'
 
 # Listas iniciais de pratos
 DOCES = ["Canjica", "Cuscuz", "Bolo de Milho", "Bolo de Fubá c/ goiabada", "Pudim", "Bolo de coco - gelado", "Maçã do Amor", "Cocada - caseiro", "Mini churros - min 50uni", "Doce de Abóbora - caseiro", "Cajuzinho - min 50uni",
-"Amendoim doce - min 25uni", "Bolo de aipim", "Doce de mamão - caseiro"]
+"Amendoim doce - min 25uni", "Bolo de aipim", "Doce de mamão - caseiro", "teste01", "teste02"]
 SALGADOS = ["Cachorro Quente", "Caldo de abóbora", "Caldo Verde", "Milho Cozido", "Salgadinho - cento", "Pastel - min 25uni", "Salsichão", "Torta Salgada", "Empadinha - min 50uni", "Caldo de Macoto", "Quiche", "Empadão - Frango",
-"Empadão - Camarão", "Bolinho de aipim - min 25uni"]
+"Empadão - Camarão", "Bolinho de aipim - min 25uni", "teste01", "teste02"]
 
 # Função para carregar os dados salvos ou criar um novo se não existir
 def carregar_dados():
