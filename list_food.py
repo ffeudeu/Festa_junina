@@ -26,7 +26,7 @@ def salvar_dados(dados):
 # Inicializa o app e carrega os dados
 dados = carregar_dados()
 
-st.title("🔥 Lista da Festa Junina 🔥")
+st.title("🔥 Lista do Arraiá da Mara 🔥")
 st.write("Confirme sua presença e escolha o que vai trazer para o nosso arraiá!")
 
 # Formulário do Convidado
