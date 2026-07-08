@@ -36,7 +36,7 @@ acompanhantes = st.number_input("Quantas pessoas você vai levar com você?", mi
 st.divider()
 
 st.subheader("🥘 Escolha dos Pratos")
-st.info("Regra: De **uma a duas pessoas**, leva um prato. **Mais de dois** é obrigatório escolher pelo uma opção de Doce e uma de Salgado.")
+st.info("Regra: De **uma a duas pessoas**, leva um prato. **Mais de duass,** é obrigatório escolher uma opção de Doce e uma de Salgado.")
 
 # Opções de múltipla escolha (Selectbox) para os pratos que ainda estão disponíveis
 doce_escolhido = st.selectbox("Escolha um prato DOCE", ["Nenhum"] + dados["doces_disponiveis"])
